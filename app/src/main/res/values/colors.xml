@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#4682B4</color>
+    <color name="colorPrimaryDark">#36648B</color>
+    <color name="colorPrimaryLight">#532399</color>
+    <color name="colorPrimaryText">#212121</color>
+    <color name="colorAccent">#FFA500</color>
+    <color name="textColorPrimary">#FFFFFF</color>
+    <color name="colorSecondaryText">#B3B3B3</color>
+    <color name="icons">#FFFFFF</color>
+    <color name="items_back">#EEE9E9</color>
+    <color name="divider">#B6B6B6</color>
+    <color name="sea">#48D1CC</color>
+    <color name="linia">#DCDCDC</color>
+    <color name="status_background">#FF8C00</color>
+    <color name="left_back_color_text">#696969</color>
+    <color name="base">#4A708B</color>
+
+</resources>

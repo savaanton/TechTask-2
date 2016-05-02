@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">SecondApp</string>
+    <string name="action_settings">Settings</string>
+    <string name="enter_account">Увійти в аккаунт</string>
+    <string name="all_events">Всі події</string>
+    <string name="events_on_map">Подї на мапі</string>
+    <string name="e_contact">e-contact</string>
+    <string name="app_close">Close</string>
+    <string name="app_open">Open</string>
+    <string name="sport">Спортивна подія</string>
+    <string name="status">Проведення</string>
+    <string name="group">Груповий етап</string>
+    <string name="semiFinal">Півфінал</string>
+    <string name="champ">Фінал</string>
+    <string name="winner">Минулорічний переможець</string>
+    <string name="groupDay">25 березня 2016</string>
+    <string name="semiFinalDay">26 березня 2016</string>
+    <string name="champDay">27 березня 2016</string>
+    <string name="winnerName">Yalantis</string>
+    <string name="description">Футбольний турнір між командами компаній у сфері IT технологій відбудеться на футбольному полі СК ВОСХОД за адресою вул. Набережна Перемоги 51 о 19:00.</string>
+    <string name="navigation_down_text">Зроблено з любов\'ю \n<a href="IT Ruh Dnipro">IT Ruh Dnipro</a> та
+        <a href="Yalantis">Yalantis</a></string>
+
+</resources>

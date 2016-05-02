@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/MatchWrap"
+    android:id="@+id/item_layout"
+    android:padding="8dp">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        style="@style/MatchWrap"
+        android:background="@drawable/drawable_recycler_item"
+        android:clickable="true"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            style="@style/RecyclerItemStyle"
+            android:layout_weight="3"
+            android:paddingBottom="@dimen/recycler_item_bottom">
+
+            <ImageView
+                android:id="@+id/mark"
+                style="@style/WrapContent"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:paddingTop="@dimen/item_padding_top" />
+
+            <ImageView
+                android:id="@+id/like"
+                style="@style/WrapContent"
+                android:layout_marginLeft="16dp"
+                android:layout_alignParentBottom="true" />
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/linia" />
+
+        <LinearLayout
+           style="@style/RecyclerItemStyle"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:clickable="true">
+
+            <TextView
+                android:id="@+id/titles"
+                style="@style/WrapContent"
+                android:paddingLeft="@dimen/header_padding_left"
+                android:paddingTop="@dimen/item_padding_top"
+                android:textColor="@color/colorPrimaryText"
+                android:textSize="@dimen/text_size_info"
+                android:clickable="true"/>
+
+            <RelativeLayout
+                style="@style/MatchParent">
+                <TextView
+                    android:id="@+id/adress"
+                    style="@style/WrapContent"
+                    android:layout_above="@+id/data"
+                    android:layout_alignParentLeft="true"
+                    android:paddingLeft="@dimen/header_padding_left"
+                    android:singleLine="true"
+                    android:textColor="@color/colorSecondaryText" />
+
+                <TextView
+                    android:id="@+id/data"
+                    style="@style/WrapContent"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:paddingBottom="@dimen/header_padding_bottom"
+                    android:paddingLeft="@dimen/header_padding_left"
+                    android:textColor="@color/colorSecondaryText"
+                    android:textStyle="bold"
+                    />
+
+                <TextView
+                    android:id="@+id/days"
+                    style="@style/WrapContent"
+                    android:layout_alignBaseline="@+id/data"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:paddingBottom="16dp"
+                    android:paddingRight="16dp"
+                    android:textColor="@color/colorSecondaryText"
+                    android:textStyle="bold"/>
+
+
+            </RelativeLayout>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
