@@ -27,8 +27,8 @@ public class TabRecyclerAdapter extends RecyclerView.Adapter<TabRecyclerAdapter.
     private Context mContext;
 
     public TabRecyclerAdapter(Context context, List<TabRecycleViewData> tabList) {
-        this.mContext = context;
-        this.mTabRecyclerList = tabList;
+        this.mContext = context; //[Comment] Unnecessary "this"
+        this.mTabRecyclerList = tabList; //[Comment] Unnecessary "this"
     }
 
 
@@ -44,13 +44,13 @@ public class TabRecyclerAdapter extends RecyclerView.Adapter<TabRecyclerAdapter.
 
         public ViewHolder(View itemView) {
             super(itemView);
-            this.mImageIcon = (ImageView) itemView.findViewById(R.id.mark);
-            this.mTextTitle = (TextView) itemView.findViewById(R.id.titles);
-            this.mTextAdress = (TextView) itemView.findViewById(R.id.adress);
-            this.mTextData = (TextView) itemView.findViewById(R.id.data);
-            this.mTextDays = (TextView) itemView.findViewById(R.id.days);
-            this.mImageLike = (ImageView) itemView.findViewById(R.id.like);
-            this.mLinerLayout = (LinearLayout) itemView.findViewById(R.id.item_layout);
+            this.mImageIcon = (ImageView) itemView.findViewById(R.id.mark); //[Comment] Unnecessary "this"
+            this.mTextTitle = (TextView) itemView.findViewById(R.id.titles); //[Comment] Unnecessary "this"
+            this.mTextAdress = (TextView) itemView.findViewById(R.id.adress); //[Comment] Unnecessary "this"
+            this.mTextData = (TextView) itemView.findViewById(R.id.data); //[Comment] Unnecessary "this"
+            this.mTextDays = (TextView) itemView.findViewById(R.id.days); //[Comment] Unnecessary "this"
+            this.mImageLike = (ImageView) itemView.findViewById(R.id.like); //[Comment] Unnecessary "this"
+            this.mLinerLayout = (LinearLayout) itemView.findViewById(R.id.item_layout); //[Comment] Unnecessary "this"
         }
     }
 
@@ -74,11 +74,12 @@ public class TabRecyclerAdapter extends RecyclerView.Adapter<TabRecyclerAdapter.
         holder.mTextDays.setText(mTabRecyclerList.get(position).getmDays());
         holder.mImageLike.setImageResource(mTabRecyclerList.get(position).getmLike());
 
+        //[Comment] VERY BAD. Make one listener for root view. Anyway you should not start activity from adapter
         holder.mLinerLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(mContext, InformationActivity.class);
-                i.putExtra("viewData", viewData.getId());
+                i.putExtra("viewData", viewData.getId()); //[Comment] Copy/Paste code
                 mContext.startActivity(i);
             }
         });
@@ -87,7 +88,7 @@ public class TabRecyclerAdapter extends RecyclerView.Adapter<TabRecyclerAdapter.
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(mContext, InformationActivity.class);
-                i.putExtra("viewData", viewData.getId());
+                i.putExtra("viewData", viewData.getId()); //[Comment] Copy/Paste code
                 mContext.startActivity(i);
             }
         });
@@ -96,7 +97,7 @@ public class TabRecyclerAdapter extends RecyclerView.Adapter<TabRecyclerAdapter.
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(mContext, InformationActivity.class);
-                i.putExtra("viewData", viewData.getId());
+                i.putExtra("viewData", viewData.getId()); //[Comment] Copy/Paste code
                 mContext.startActivity(i);
             }
         });
@@ -105,7 +106,7 @@ public class TabRecyclerAdapter extends RecyclerView.Adapter<TabRecyclerAdapter.
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(mContext, InformationActivity.class);
-                i.putExtra("viewData", viewData.getId());
+                i.putExtra("viewData", viewData.getId()); //[Comment] Copy/Paste code
                 mContext.startActivity(i);
             }
         });
@@ -114,7 +115,7 @@ public class TabRecyclerAdapter extends RecyclerView.Adapter<TabRecyclerAdapter.
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(mContext, InformationActivity.class);
-                i.putExtra("viewData", viewData.getId());
+                i.putExtra("viewData", viewData.getId());//[Comment] Copy/Paste code
                 mContext.startActivity(i);
             }
         });
@@ -123,7 +124,7 @@ public class TabRecyclerAdapter extends RecyclerView.Adapter<TabRecyclerAdapter.
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(mContext, InformationActivity.class);
-                i.putExtra("viewData", viewData.getId());
+                i.putExtra("viewData", viewData.getId()); //[Comment] Copy/Paste code
                 mContext.startActivity(i);
             }
         });
@@ -132,7 +133,7 @@ public class TabRecyclerAdapter extends RecyclerView.Adapter<TabRecyclerAdapter.
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(mContext, InformationActivity.class);
-                i.putExtra("viewData", viewData.getId());
+                i.putExtra("viewData", viewData.getId()); //[Comment] Copy/Paste code
                 mContext.startActivity(i);
             }
         });

@@ -19,8 +19,8 @@ import java.util.List;
  */
 public class WaitFragment extends Fragment {
 
-    List<TabRecycleViewData> mImageList;
-    TabListAdapter tabListAdapter;
+    List<TabRecycleViewData> mImageList; //[Comment] Unused
+    TabListAdapter tabListAdapter; //[Comment] VISIBILITY MODIFIERS
 
     public WaitFragment() {
 
@@ -50,25 +50,25 @@ public class WaitFragment extends Fragment {
 
         ArrayList list = new ArrayList();
         list.add(new TabRecycleViewData(R.drawable.ic_sport, R.drawable.ic_like, "Спортивна подія"
-                , "вул.Савченко 22, м.Дніпропетровськ", "22 квітня 2016", "7 днів"));
+                , "вул.Савченко 22, м.Дніпропетровськ", "22 квітня 2016", "7 днів")); //[Comment] HardCode
         list.add(new TabRecycleViewData(R.drawable.ic_sport, R.drawable.ic_like, "Спортивна подія"
-                , "вул.Кедріна 47, м.Дніпропетровськ", "18 квітня 2016", "5 днів"));
+                , "вул.Кедріна 47, м.Дніпропетровськ", "18 квітня 2016", "5 днів")); //[Comment] HardCode
         list.add(new TabRecycleViewData(R.drawable.ic_social, R.drawable.ic_like, "Соціальна подія"
-                , "вул.Карла Маркса 60, м.Дніпропетровськ", "15 квітня 2016", "3 днів"));
+                , "вул.Карла Маркса 60, м.Дніпропетровськ", "15 квітня 2016", "3 днів")); //[Comment] HardCode
         list.add(new TabRecycleViewData(R.drawable.ic_sport, R.drawable.ic_like, "Спортивна подія"
-                , "вул.Глінкі 17, м.Дніпропетровськ", "17 квітня 2016", "12 днів"));
+                , "вул.Глінкі 17, м.Дніпропетровськ", "17 квітня 2016", "12 днів")); //[Comment] HardCode
         list.add(new TabRecycleViewData(R.drawable.ic_sport, R.drawable.ic_like, "Спортивна подія"
-                , "вул.Кедріна 47, м.Дніпропетровськ", "18 квітня 2016", "5 днів"));
+                , "вул.Кедріна 47, м.Дніпропетровськ", "18 квітня 2016", "5 днів")); //[Comment] HardCode
         list.add(new TabRecycleViewData(R.drawable.ic_sport, R.drawable.ic_like, "Спортивна подія"
-                , "вул.Шевченка 94, м.Дніпропетровськ ", "13 квітня 2016", "7 днів"));
+                , "вул.Шевченка 94, м.Дніпропетровськ ", "13 квітня 2016", "7 днів")); //[Comment] HardCode
         list.add(new TabRecycleViewData(R.drawable.ic_party, R.drawable.ic_like, "Розважальна подія"
-                , "вул.Кірова 5, м.Дніпропетровськ ", "3 квітня 2016", "5 днів"));
+                , "вул.Кірова 5, м.Дніпропетровськ ", "3 квітня 2016", "5 днів")); //[Comment] HardCode
         list.add(new TabRecycleViewData(R.drawable.ic_social, R.drawable.ic_like, "Соціальна подія"
-                , "вул.Гагаріна 175, м.Дніпропетровськ ", "9 квітня 2016", "9 днів"));
+                , "вул.Гагаріна 175, м.Дніпропетровськ ", "9 квітня 2016", "9 днів")); //[Comment] HardCode
         list.add(new TabRecycleViewData(R.drawable.ic_sport, R.drawable.ic_like, "Спортивна подія"
-                , "вул.Тітова 1, м.Дніпропетровськ ", "9 квітня 2016", "5 днів"));
+                , "вул.Тітова 1, м.Дніпропетровськ ", "9 квітня 2016", "5 днів")); //[Comment] HardCode
         list.add(new TabRecycleViewData(R.drawable.ic_party, R.drawable.ic_like, "Розважальна подія"
-                , "вул.Робоча 122, м.Дніпропетровськ ", "3 квітня 2016", "7 днів"));
+                , "вул.Робоча 122, м.Дніпропетровськ ", "3 квітня 2016", "7 днів")); //[Comment] HardCode
 
         return list;
     }

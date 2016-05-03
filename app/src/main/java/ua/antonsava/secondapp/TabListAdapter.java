@@ -29,13 +29,13 @@ public class TabListAdapter extends BaseAdapter {
 
         mContext = context;
         mTabListView = tabListView;
-        mLayoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        mLayoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE); //[Comment] LayoutInflater.from(context)
     }
 
     @Override
     public Object getItem(int position) {
         return mTabListView.get(position);
-    }
+    } //[Comment] Here you can return your model object
 
     @Override
     public int getCount() {
@@ -50,11 +50,11 @@ public class TabListAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
 
-        View view = convertView;
+        View view = convertView; //[Comment] What this row actually do? Use convertview
         if(view == null) {
-        view = mLayoutInflater.inflate(R.layout.recycler_item, parent, false);
+        view = mLayoutInflater.inflate(R.layout.recycler_item, parent, false); //[Comment] FORMATTING
         }
-
+        //[Comment] VERY BAD. Use viewholder pattern for this adapter
         final TabRecycleViewData data = getTabRecyclerViewData(position);
 
         ((ImageView) view.findViewById(R.id.mark)).setImageResource(data.mMark);

@@ -15,21 +15,21 @@ import android.view.ViewGroup;
  * Created by Apple on 20.04.2016.
  */
 public class TabFragment extends Fragment {
-    public static TabLayout sTabLayout;
-    public static ViewPager sViewPager;
-    public static int sIntItems = 3;
+    public static TabLayout sTabLayout; //[Comment] Why static? Do you know what word "static" means?
+    public static ViewPager sViewPager; //[Comment] Why static? Do you know what word "static" means?
+    public static int sIntItems = 3;    //[Comment] Use upper-case for constant names
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-        View maket = inflater.inflate(R.layout.tab_layout, null);
+        View maket = inflater.inflate(R.layout.tab_layout, null); //[Comment] maket - wrong name
         sTabLayout = (TabLayout) maket.findViewById(R.id.tabs);
         sViewPager = (ViewPager) maket.findViewById(R.id.view_pager);
 
         sViewPager.setAdapter(new Adapter(getChildFragmentManager()));
 
-        sTabLayout.post(new Runnable() {
+        sTabLayout.post(new Runnable() { //[Comment] Unnecessary runnable
             @Override
             public void run() {
                 sTabLayout.setupWithViewPager(sViewPager);
@@ -38,7 +38,7 @@ public class TabFragment extends Fragment {
         return maket;
     }
 
-    class Adapter extends FragmentPagerAdapter {
+    class Adapter extends FragmentPagerAdapter { //[Comment] Should be external
         public Adapter(FragmentManager fm) {
             super(fm);
         }
@@ -46,12 +46,12 @@ public class TabFragment extends Fragment {
         @Override
         public Fragment getItem(int position) {
             switch (position) {
-                case 0:
-                    return new MakesFragment();
-                case 1:
-                    return new DoneFragment();
-                case 2:
-                    return new WaitFragment();
+                case 0://[Comment] Magic numbers
+                    return new MakesFragment(); //[Comment] Use newInstance pattern for fragments
+                case 1://[Comment] Magic numbers
+                    return new DoneFragment(); //[Comment] Use newInstance pattern for fragments
+                case 2://[Comment] Magic numbers
+                    return new WaitFragment(); //[Comment] Use newInstance pattern for fragments
             }
             return null;
         }
@@ -64,12 +64,12 @@ public class TabFragment extends Fragment {
         @Override
         public CharSequence getPageTitle(int position) {
             switch (position) {
-                case 0:
-                    return "Проведення";
-                case 1:
-                    return "Нещодавно відбулися";
-                case 2:
-                    return "Найближчі події";
+                case 0: //[Comment] Magic numbers
+                    return "Проведення"; //[Comment] HardCode
+                case 1: //[Comment] Magic numbers
+                    return "Нещодавно відбулися"; //[Comment] HardCode
+                case 2: //[Comment] Magic numbers
+                    return "Найближчі події"; //[Comment] HardCode
             }
             return null;
         }

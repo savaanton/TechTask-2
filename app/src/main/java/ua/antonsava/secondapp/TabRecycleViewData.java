@@ -18,7 +18,7 @@ public class TabRecycleViewData {
     public TabRecycleViewData(int mMark, int mLike, String mTitle,
                               String mAdress, String mData, String mDays) {
 
-        this.mMark = mMark;
+        this.mMark = mMark; //[Comment] Wrong method arguments names
         this.mLike = mLike;
         this.mTitle = mTitle;
         this.mAdress = mAdress;
@@ -74,7 +74,7 @@ public class TabRecycleViewData {
 
     public String getmDays() {
         return mDays;
-    }
+    } //[Comment] Wrong methods names
 
     public void setmDays(String mDays) {
         this.mDays = mDays;

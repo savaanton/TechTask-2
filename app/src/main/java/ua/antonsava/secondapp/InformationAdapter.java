@@ -19,12 +19,12 @@ public class InformationAdapter extends RecyclerView.Adapter<InformationAdapter.
     private Context mContext;
 
     public InformationAdapter(Context context, List<Integer> imageList) {
-        this.mPictureList = imageList;
+        this.mPictureList = imageList; //[Comment] Unnecessary "this"
         mContext = context;
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        ImageView mImageView;
+        ImageView mImageView; //[Comment] Wrong visibility modifier
 
         public ViewHolder(View itemView) {
             super(itemView);

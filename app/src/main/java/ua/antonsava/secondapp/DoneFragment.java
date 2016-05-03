@@ -17,10 +17,10 @@ import java.util.List;
 /**
  * Created by Apple on 20.04.2016.
  */
-public class DoneFragment extends Fragment {
+public class DoneFragment extends Fragment { //[Comment] @see MakesFragment
 
     private List<TabRecycleViewData> mImageList = new ArrayList<>();
-    private Context mContext;
+    private Context mContext; //[Comment] Unused
 
     public DoneFragment() {
     }
