@@ -22,14 +22,12 @@ import butterknife.OnClick;
 public class TabListAdapter extends BaseAdapter {
 
     private Context mContext;
-    private LayoutInflater mLayoutInflater;
     private List<TabRecycleViewData> mTabListView;
 
     public TabListAdapter(Context context, List<TabRecycleViewData> tabListView) {
 
         mContext = context;
         mTabListView = tabListView;
-        mLayoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
 
     @Override
@@ -50,34 +48,50 @@ public class TabListAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
 
-        View view = convertView;
-        if(view == null) {
-        view = mLayoutInflater.inflate(R.layout.recycler_item, parent, false);
+        ViewHolder holder;
+        if (convertView == null) {
+            LayoutInflater inflater = LayoutInflater.from(mContext);
+            convertView = inflater.inflate(R.layout.recycler_item, null);
+            holder = new ViewHolder(convertView);
+            convertView.setTag(holder);
+        } else {
+            holder = (ViewHolder) convertView.getTag();
         }
 
-        final TabRecycleViewData data = getTabRecyclerViewData(position);
+        holder.mImageIcon.setImageResource(mTabListView.get(position).getMark());
+        holder.mTextTitle.setText(mTabListView.get(position).getTitle());
+        holder.mTextAdress.setText(mTabListView.get(position).getAdress());
+        holder.mTextData.setText(mTabListView.get(position).getData());
+        holder.mTextDays.setText(mTabListView.get(position).getDays());
+        holder.mImageLike.setImageResource(mTabListView.get(position).getLike());
 
-        ((ImageView) view.findViewById(R.id.mark)).setImageResource(data.mMark);
-        ((ImageView) view.findViewById(R.id.like)).setImageResource(data.mLike);
-        ((TextView) view.findViewById(R.id.titles)).setText(data.mTitle);
-        ((TextView) view.findViewById(R.id.adress)).setText(data.mAdress);
-        ((TextView) view.findViewById(R.id.data)).setText(data.mData);
-        ((TextView) view.findViewById(R.id.days)).setText(data.mDays);
-        LinearLayout linearLayout = (LinearLayout) view.findViewById(R.id.item_layout);
-
-        linearLayout.setOnClickListener(new View.OnClickListener() {
+        holder.mLinerLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(mContext, InformationActivity.class);
-                i.putExtra("viewData", data.getId());
                 mContext.startActivity(i);
             }
         });
-
-        return view;
+        return convertView;
     }
 
-    private TabRecycleViewData getTabRecyclerViewData(int position) {
-        return ((TabRecycleViewData) getItem(position));
+    public class ViewHolder {
+        ImageView mImageIcon;
+        TextView mTextTitle;
+        TextView mTextAdress;
+        TextView mTextData;
+        TextView mTextDays;
+        ImageView mImageLike;
+        LinearLayout mLinerLayout;
+
+        public ViewHolder(View view) {
+            mImageIcon = (ImageView) view.findViewById(R.id.mark);
+            mTextTitle = (TextView) view.findViewById(R.id.titles);
+            mTextAdress = (TextView) view.findViewById(R.id.adress);
+            mTextData = (TextView) view.findViewById(R.id.data);
+            mTextDays = (TextView) view.findViewById(R.id.days);
+            mImageLike = (ImageView) view.findViewById(R.id.like);
+            mLinerLayout = (LinearLayout) view.findViewById(R.id.item_layout);
+        }
     }
 }

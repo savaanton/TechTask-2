@@ -19,8 +19,9 @@ import java.util.List;
  */
 public class WaitFragment extends Fragment {
 
-    List<TabRecycleViewData> mImageList;
-    TabListAdapter tabListAdapter;
+    private TabListAdapter mTabListAdapter;
+    private static final String STATE_KEY = "ua.antonsava.secondapp.WaitFragment";
+
 
     public WaitFragment() {
 
@@ -40,8 +41,17 @@ public class WaitFragment extends Fragment {
         ListView mListView = (ListView) view.findViewById(R.id.list_view_tab);
 
         ArrayList data = receiveDataImage();
-        tabListAdapter = new TabListAdapter(getActivity(), data);
-        mListView.setAdapter(tabListAdapter);
+        mTabListAdapter = new TabListAdapter(getActivity(), data);
+        mListView.setAdapter(mTabListAdapter);
+
+        mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent i = new Intent(getActivity(), InformationActivity.class);
+                startActivity(i);
+            }
+        });
 
         return view;
     }
@@ -71,5 +81,17 @@ public class WaitFragment extends Fragment {
                 , "вул.Робоча 122, м.Дніпропетровськ ", "3 квітня 2016", "7 днів"));
 
         return list;
+    }
+
+    public static Fragment getInstance(State statusWait) {
+
+        Fragment fragment = new MakesFragment();
+
+        Bundle param = new Bundle();
+        param.putInt(STATE_KEY, statusWait.getStateName());
+
+        fragment.setArguments(param);
+
+        return fragment;
     }
 }

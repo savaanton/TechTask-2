@@ -27,10 +27,9 @@ public class TabRecyclerAdapter extends RecyclerView.Adapter<TabRecyclerAdapter.
     private Context mContext;
 
     public TabRecyclerAdapter(Context context, List<TabRecycleViewData> tabList) {
-        this.mContext = context;
-        this.mTabRecyclerList = tabList;
+        mContext = context;
+        mTabRecyclerList = tabList;
     }
-
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
@@ -44,13 +43,13 @@ public class TabRecyclerAdapter extends RecyclerView.Adapter<TabRecyclerAdapter.
 
         public ViewHolder(View itemView) {
             super(itemView);
-            this.mImageIcon = (ImageView) itemView.findViewById(R.id.mark);
-            this.mTextTitle = (TextView) itemView.findViewById(R.id.titles);
-            this.mTextAdress = (TextView) itemView.findViewById(R.id.adress);
-            this.mTextData = (TextView) itemView.findViewById(R.id.data);
-            this.mTextDays = (TextView) itemView.findViewById(R.id.days);
-            this.mImageLike = (ImageView) itemView.findViewById(R.id.like);
-            this.mLinerLayout = (LinearLayout) itemView.findViewById(R.id.item_layout);
+            mImageIcon = (ImageView) itemView.findViewById(R.id.mark);
+            mTextTitle = (TextView) itemView.findViewById(R.id.titles);
+            mTextAdress = (TextView) itemView.findViewById(R.id.adress);
+            mTextData = (TextView) itemView.findViewById(R.id.data);
+            mTextDays = (TextView) itemView.findViewById(R.id.days);
+            mImageLike = (ImageView) itemView.findViewById(R.id.like);
+            mLinerLayout = (LinearLayout) itemView.findViewById(R.id.item_layout);
         }
     }
 
@@ -65,74 +64,18 @@ public class TabRecyclerAdapter extends RecyclerView.Adapter<TabRecyclerAdapter.
 
     @Override
     public void onBindViewHolder(TabRecyclerAdapter.ViewHolder holder, int position) {
-       final TabRecycleViewData viewData = mTabRecyclerList.get(position);
 
-        holder.mImageIcon.setImageResource(mTabRecyclerList.get(position).getmMark());
-        holder.mTextTitle.setText(mTabRecyclerList.get(position).getmTitle());
-        holder.mTextAdress.setText(mTabRecyclerList.get(position).getmAdress());
-        holder.mTextData.setText(mTabRecyclerList.get(position).getmData());
-        holder.mTextDays.setText(mTabRecyclerList.get(position).getmDays());
-        holder.mImageLike.setImageResource(mTabRecyclerList.get(position).getmLike());
+        holder.mImageIcon.setImageResource(mTabRecyclerList.get(position).getMark());
+        holder.mTextTitle.setText(mTabRecyclerList.get(position).getTitle());
+        holder.mTextAdress.setText(mTabRecyclerList.get(position).getAdress());
+        holder.mTextData.setText(mTabRecyclerList.get(position).getData());
+        holder.mTextDays.setText(mTabRecyclerList.get(position).getDays());
+        holder.mImageLike.setImageResource(mTabRecyclerList.get(position).getLike());
 
         holder.mLinerLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(mContext, InformationActivity.class);
-                i.putExtra("viewData", viewData.getId());
-                mContext.startActivity(i);
-            }
-        });
-
-        holder.mImageIcon.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(mContext, InformationActivity.class);
-                i.putExtra("viewData", viewData.getId());
-                mContext.startActivity(i);
-            }
-        });
-
-        holder.mTextTitle.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(mContext, InformationActivity.class);
-                i.putExtra("viewData", viewData.getId());
-                mContext.startActivity(i);
-            }
-        });
-
-        holder.mTextData.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(mContext, InformationActivity.class);
-                i.putExtra("viewData", viewData.getId());
-                mContext.startActivity(i);
-            }
-        });
-
-        holder.mTextDays.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(mContext, InformationActivity.class);
-                i.putExtra("viewData", viewData.getId());
-                mContext.startActivity(i);
-            }
-        });
-
-        holder.mTextAdress.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(mContext, InformationActivity.class);
-                i.putExtra("viewData", viewData.getId());
-                mContext.startActivity(i);
-            }
-        });
-
-        holder.mImageLike.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(mContext, InformationActivity.class);
-                i.putExtra("viewData", viewData.getId());
                 mContext.startActivity(i);
             }
         });

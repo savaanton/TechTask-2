@@ -20,5 +20,9 @@
     <string name="description">Футбольний турнір між командами компаній у сфері IT технологій відбудеться на футбольному полі СК ВОСХОД за адресою вул. Набережна Перемоги 51 о 19:00.</string>
     <string name="navigation_down_text">Зроблено з любов\'ю \n<a href="IT Ruh Dnipro">IT Ruh Dnipro</a> та
         <a href="Yalantis">Yalantis</a></string>
+    <string name="on_map">Події на мапі</string>
+    <string name="wait">Найближчі події</string>
+    <string name="done">Нещодавно відбулися</string>
+    <string name="makes">Проведення</string>
 
 </resources>

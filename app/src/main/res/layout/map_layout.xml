@@ -5,5 +5,5 @@
 
     <TextView
         style="@style/MatchWrap"
-        android:text="@string/app_name" />
+        android:text="@string/on_map" />
 </LinearLayout>

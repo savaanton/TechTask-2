@@ -1,13 +1,12 @@
 package ua.antonsava.secondapp;
 
-import android.support.v7.widget.RecyclerView;
+
 
 /**
  * Created by Apple on 20.04.2016.
  */
 public class TabRecycleViewData {
 
-    public static String mId;
     public int mMark;
     public int mLike;
     public String mTitle;
@@ -15,76 +14,69 @@ public class TabRecycleViewData {
     public String mData;
     public String mDays;
 
-    public TabRecycleViewData(int mMark, int mLike, String mTitle,
-                              String mAdress, String mData, String mDays) {
+    public TabRecycleViewData(int mark, int like, String title,
+                              String adress, String data, String days) {
 
-        this.mMark = mMark;
-        this.mLike = mLike;
-        this.mTitle = mTitle;
-        this.mAdress = mAdress;
-        this.mData = mData;
-        this.mDays = mDays;
+        this.mMark = mark;
+        this.mLike = like;
+        this.mTitle = title;
+        this.mAdress = adress;
+        this.mData = data;
+        this.mDays = days;
 
     }
 
-    public String getmTitle() {
+    public String getTitle() {
         return mTitle;
     }
 
-    public void setmTitle(String mTitle) {
+    public void setTitle(String title) {
 
-        this.mTitle = mTitle;
+        this.mTitle = title;
     }
 
-    public int getmLike() {
+    public int getLike() {
         return mLike;
     }
 
-    public void setmLike(int mLike) {
+    public void setLike(int like) {
 
-        this.mLike = mLike;
+        this.mLike = like;
     }
 
-    public int getmMark() {
+    public int getMark() {
         return mMark;
     }
 
-    public void setmMark(int mMark) {
+    public void setMark(int mark) {
 
-        this.mMark = mMark;
+        this.mMark = mark;
     }
 
-    public String getmAdress() {
+    public String getAdress() {
         return mAdress;
     }
 
-    public void setmAdress(String mAdress) {
+    public void setAdress(String adress) {
 
-        this.mAdress = mAdress;
+        this.mAdress = adress;
     }
 
-    public String getmData() {
+    public String getData() {
         return mData;
     }
 
-    public void setmData(String mData) {
+    public void setData(String data) {
 
-        this.mData = mData;
+        this.mData = data;
     }
 
-    public String getmDays() {
+    public String getDays() {
         return mDays;
     }
 
-    public void setmDays(String mDays) {
-        this.mDays = mDays;
-    }
+    public void setDays(String days) {
 
-    public static String getId() {
-        return mId;
-    }
-
-    public void setId(String id) {
-        mId = id;
+        this.mDays = days;
     }
 }

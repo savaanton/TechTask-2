@@ -1,6 +1,7 @@
 package ua.antonsava.secondapp;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -10,6 +11,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,6 +20,8 @@ import java.util.List;
  * Created by Apple on 20.04.2016.
  */
 public class MakesFragment extends Fragment {
+
+    private static final String STATE_KEY = "ua.antonsava.secondapp.MakesFragment";
 
     public MakesFragment() {
 
@@ -29,14 +33,14 @@ public class MakesFragment extends Fragment {
             , ViewGroup container, Bundle savedInstanceState) {
 
         View rootView = inflater.inflate(R.layout.makes_layout, container, false);
-        RecyclerView mRecyclerView = (RecyclerView) rootView.findViewById(R.id.recycler_view_tab);
+        RecyclerView recyclerView = (RecyclerView) rootView.findViewById(R.id.recycler_view_tab);
 
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
-        final ArrayList data = receiveDataImage();
+        ArrayList data = receiveDataImage();
         TabRecyclerAdapter mAdapter = new TabRecyclerAdapter(getActivity(), data);
-        mRecyclerView.setAdapter(mAdapter);
-        mRecyclerView.setItemAnimator(new DefaultItemAnimator());
+        recyclerView.setAdapter(mAdapter);
+        recyclerView.setItemAnimator(new DefaultItemAnimator());
 
         return rootView;
     }
@@ -66,5 +70,16 @@ public class MakesFragment extends Fragment {
                 , "вул.Робоча 122, м.Дніпропетровськ ", "3 квітня 2016", "7 днів"));
 
         return list;
+    }
+
+    public static Fragment getInstance(State statusMakes) {
+        Fragment fragment = new MakesFragment();
+
+        Bundle param = new Bundle();
+        param.putInt(STATE_KEY, statusMakes.getStateName());
+
+        fragment.setArguments(param);
+
+        return fragment;
     }
 }
